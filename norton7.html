@@ -13073,6 +13073,8 @@ div#notebook {
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
+          <p style="color: #eea236;">An introduction to the search space</p>
+
       <h1> <b> How to choose a new car ? an in-depth study that allows you to use and analyze web data as the basis for
         choosing the
         right car at a reasonable price.</b></h1>
@@ -13086,6 +13088,7 @@ div#notebook {
         in the middle range, and which are very useful, I remind you of our objective which is the purchase of an adequate car
         with an optimal value for money.</p>
       <br>
+      <p style="color: #eea236;">Data is relevant to the project brief and list of topics. Data source is clearly justified including:</p>
       <p>
         A car is characterized by its brand, the year of release or the model, the mileage, the fiscal power, type of fuel,
         gearbox, and finally the accessories, normally this information is very relevant, because normally the mileage is
@@ -13103,6 +13106,7 @@ div#notebook {
       
       </p>
       <br>
+      <p style="color: #eea236;">Project background is clearly defined (e.g. use of literature, research or pre-analysis)</p>
       <p>
         our study will be based on a so-called statistical study that will allow us to categorize luxury cars, mid-range cars,
         how mileage plays a role in price, and how tax horsepower influences price, sort data.
@@ -13383,10 +13387,15 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 
 </div>
+    <p style="color: #eea236;">The dataset has been technically explored</p>
 
-<h1>This function get_data_from_page_product(url): is used to extract or scrap the data from a single car page, it allows to extract the price, brand,
-release date, accessories, mileage, type of fuel, model, type of gearbox ,it takes url as input and return data dictionary</h1>
+<h3>This function get_data_from_page_product(url): is used to extract or scrap the data from a single car page, it allows to extract the price, brand,
+release date, accessories, mileage, type of fuel, model, type of gearbox ,it takes url as input and return data dictionary</h3>
 <br>
+<h6>To prove The data set has been technically explored, we will do tests at the level of the code and the conditions at the
+level of each iteration, if a data which must be extracted is not filled in, we will replace it with null or a empty
+character string. <br>
+This function which allows to extract from a car link the data finally returns a data dictionary</h6>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
@@ -13541,8 +13550,11 @@ release date, accessories, mileage, type of fuel, model, type of gearbox ,it tak
 </div>
 
 <h1>This function that we are going to implement allows to extract the data of each car that appears in the page number i,
-you just have to replace i with the number of the page and it will call the function above for each car
+you just have to replace i with the number of the page and it will call the function above for each car.
 </h1>
+<h3>After using this function, the role of the latter makes it possible to extract the data from a page and stores it in an
+array list, after it injects everything into a csv file thanks to the to_csv function with the read-write mode at the
+end.</h3>
 <br>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13576,7 +13588,8 @@ you just have to replace i with the number of the page and it will call the func
 </div>
 
 </div>
-<h1><b> Call get_data_cars_from_page(1) , It extracts data from page=1 </b></h1>
+<p style="color:#985f0d">Code is functional</p>
+<h3><b> Call get_data_cars_from_page(1) , It extracts data from page=1 </b></h3>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
@@ -13695,6 +13708,12 @@ you just have to replace i with the number of the page and it will call the func
 </div>
 
 <h3>
+<p style="color:#B27D12"> The ethics of data use have been taken into accounts</p>
+  As we know, the data sources of the web are not really cleaned, because there are for example fields not filled in, for
+  example to talk about sorting by price, the price column must contain numerical values, you must not not especially
+  replace the values not informed by the value 0, because it will influence on the average of the prices for example. So
+  we must do some processing for our data and verifications.
+  then starting with the price column we must not take into consideration those who are not informed.
   The data is stored in the scrap.csv file we will handle it with Pandas
 </h3>
 <div class="cell border-box-sizing code_cell rendered">
@@ -13710,6 +13729,7 @@ you just have to replace i with the number of the page and it will call the func
 </div>
 
 </div>
+
 <h3>
 Eliminate the rows that contain prices that have not been entered
 </h3>
