@@ -13073,11 +13073,12 @@ div#notebook {
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
-          <p style="color: #eea236;">An introduction to the search space</p>
+      <h1 style="text-align:center;"><b>Report on a study of the car market.</b> </h1>    
+      <h2> <b>I-Introduction</b> </h2>
 
-      <h1> <b> How to choose a new car ? an in-depth study that allows you to use and analyze web data as the basis for
+      <h3>  How to choose a new car ? an in-depth study that allows you to use and analyze web data as the basis for
         choosing the
-        right car at a reasonable price.</b></h1>
+        right car at a reasonable price.</h3>
       <p>Choosing a car, whether new or used, is not an easy task, especially if you are not an automotive expert. In this
         study,
         we will become an ace in this field and we will easily find the model that suits us, we as buyers.And especially if we
@@ -13088,8 +13089,23 @@ div#notebook {
         in the middle range, and which are very useful, I remind you of our objective which is the purchase of an adequate car
         with an optimal value for money.</p>
       <br>
-      <p style="color: #eea236;">Data is relevant to the project brief and list of topics. Data source is clearly justified including:</p>
-      <p>
+      <h2> <b>II-Project goals and objectives:</b> </h2>
+      <h3>In this car study project we will try to shed light on the car market, and use data extracted from the internet using
+      python to help people who do not have a good knowledge of the car market. to help him make a good decision in their
+      choice of cars, while taking into consideration that the market provides several brands of cars and several ranges and
+      that each car has its own characteristics and above all to guarantee the consumer an optimal choice with a minimized
+      budget .</h3>
+      <br>
+      <h2> <b>III-The data used:</b> </h2>
+      <h3>We are faced with 2 choices:
+      https://www.leboncoin.fr/: it is a well-known site in the car market, but the latter will not be very useful, because it
+      is developed with Single page technology, that is to say all http requests are done in real time without refreshing the
+      page, and moreover it allows us to extract all the data from the site, it is wrong to choose by region when we are
+      supposed to use big data as well as the site contains anti scraping.
+      And to do this, we will use a car sales site Avito.ma, the latter allows you to present each car with all the
+      characteristics, you can also extract everything and moreover the site does not contain any anti-scraping.</h3>
+      <p style="color:#999999;">Data is relevant to the project brief and list of topics. Data source is clearly justified including:</p>
+      <h3>
         A car is characterized by its brand, the year of release or the model, the mileage, the fiscal power, type of fuel,
         gearbox, and finally the accessories, normally this information is very relevant, because normally the mileage is
         indicator on the reliability of the car, as long as the mileage is low then the car can be as reliable and its
@@ -13104,16 +13120,31 @@ div#notebook {
         extract
         the data. all this data will be stored in a csv file.
       
-      </p>
+      </h3>
       <br>
-      <p style="color: #eea236;">Project background is clearly defined (e.g. use of literature, research or pre-analysis)</p>
-      <p>
-        our study will be based on a so-called statistical study that will allow us to categorize luxury cars, mid-range cars,
+      <p style="color:#999999;">Project background is clearly defined (e.g. use of literature, research or pre-analysis)</p>
+      <h2><b>IV-The general context and its details</b></h2>
+      <h3>
+        Our study will be based on a so-called statistical study that will allow us to categorize luxury cars, mid-range cars,
         how mileage plays a role in price, and how tax horsepower influences price, sort data.
-        we will delete from the list of data, the cars which do not contain the prices included.
+        We will delete from the list of data, the cars which do not contain the prices included.
+        After doing an in-depth search on the internet, we found research that makes a global study of the car market and not a
+        specific study like the one we have presented, because these types of research can affect the reputation of car brands.
+        , like what they don't want to position themselves in a situation of saying that this brand is better than the other.
+        Our study will not target very high-end cars, however it will be dedicated to people who have a standard and average
+        budget, which is logical, and in addition to sites that present high-end cars for sale. are very rare. Even classic cars
+        will not be considered because we have to choose a useful car that will make life easier for people, whether for
+        everyday life or for travel.
+        And to evaluate a car we will base ourselves on a low mileage, a reasonable price, contains accessories such as
+        Bluetooth, reversing camera, Abs is also important for the braking system, and moreover an automatic gearbox which is
+        the tendency.
+        We will use the famous Python language, it is an interpreted, multi-paradigm and multi-platform programming language. It
+        promotes structured, functional and object-oriented imperative programming. It has strong dynamic typing, automatic
+        memory management by garbage collection and an exception management system and can be used in many contexts and adapt to
+        any type of situation. use through specialized libraries. However, it is particularly used in web scrapping.
 
-      </p>
-      <h2><b>The libraries Used in our code.</b></h2>
+      </h3>
+      <h2><b>V-The libraries Used in our code.</b></h2>
       <h5>The libraries we will use are:</h5>
       <ul>
         <li>Csv which allows to manipulate csv type files.</li>
@@ -13388,14 +13419,40 @@ Note: you may need to restart the kernel to use updated packages.
 
 </div>
     <p style="color: #eea236;">The dataset has been technically explored</p>
+    <h2><b>VI-Explore the data</b></h2>
 
 <h3>This function get_data_from_page_product(url): is used to extract or scrap the data from a single car page, it allows to extract the price, brand,
 release date, accessories, mileage, type of fuel, model, type of gearbox ,it takes url as input and return data dictionary</h3>
 <br>
-<h6>To prove The data set has been technically explored, we will do tests at the level of the code and the conditions at the
-level of each iteration, if a data which must be extracted is not filled in, we will replace it with null or a empty
-character string. <br>
-This function which allows to extract from a car link the data finally returns a data dictionary</h6>
+<h3>We will extract from each page of the car the following data.
+The price: the selling price of the car.
+Mileage: an interval contains the distance traveled by the car from its first registration.
+Car brand.
+The city of the car.
+Date of sale.
+Car model: for example Mercedes Class A or Class C.
+Number of car doors.
+Tax horsepower of the car: as long as the horsepower is high then the buyer will pay even more taxes.
+Type of gearbox: Automatic or Manual
+And finally the car accessories.
+To prove that the dataset has been explored technically, we will do tests at the level of the code and the conditions at
+the level of each iteration, if a data which must be extracted is not filled in, we will replace it with null or a
+string empty characters.
+This function, which extracts data from a car link, finally returns a data dictionary.
+Data cleaning and conversion:
+After scrapping the data will be saved in a csv file.
+But before attacking the analysis, we must go through a cleaning:
+This cleaning will consist of 2 parts:
+The first part is to convert the price column to numbers, also the mileage column, door numbers.
+Convert date strings to date format.
+Empty fields must not be taken into consideration, so they must be eliminated.
+Our code is composed of several parts:
+2 extraction functions
+Import Libraries
+Run the 2 functions using the multiprocessing technique.
+The Code Python contains comments.<br>
+<br>
+This function which allows to extract from a car link the data finally returns a data dictionary</h3>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
@@ -13654,11 +13711,11 @@ end.</h3>
 
 </div>
 
-<h2> <b>
+<h3> <b>
   we will extract the data from page 1 to page 20, knowing that in each page there are around 30 cars, then we will have
   600 cars at the end, and to do this we will call the multiprocessing library to execute the code on several threds which
   will minimize the execution time
-</b></h2>
+</b></h3>
 <br>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13706,9 +13763,9 @@ end.</h3>
 </div>
 
 </div>
-
+<h2><b>VII-The ethics of data use have been taken into accounts</b> </h2>
 <h3>
-<p style="color:#B27D12"> The ethics of data use have been taken into accounts</p>
+
   As we know, the data sources of the web are not really cleaned, because there are for example fields not filled in, for
   example to talk about sorting by price, the price column must contain numerical values, you must not not especially
   replace the values not informed by the value 0, because it will influence on the average of the prices for example. So
@@ -13716,6 +13773,28 @@ end.</h3>
   then starting with the price column we must not take into consideration those who are not informed.
   The data is stored in the scrap.csv file we will handle it with Pandas
 </h3>
+<br>
+<h3><b>What happens if we don't do this cleaning?</b> <br> For example if the price is 1000$, in the column it will be stored in string '1000' so we must return it directly to
+1000. And this so that we can talk about the average price, the max and min price, the price variance, because otherwise
+we can no longer speak of the average of the character strings.In addition, we must eliminate the lines that contain Null prices or prices with a price of 0, because in reality there
+are no cars for sale at 0 it is a typing error and if we do this elimination it will influence the average and the minimum. 
+</h3>
+<h3> <b>Example :</b>
+  
+  We have 3 cars for sale respectively: 1000$-'NULL'-1500$, in this case we can no longer speak of the average or the max
+  or the min.
+  And all this achieved thanks to the Pandas library.
+  The data is stored in a csv file called scrap.cv. <br>
+  <b>
+  So we do the following processing: <br>
+  -The price column will be converted to a number. <br>
+  -Delete all rows that contain unspecified prices. <br>
+  -Delete lines that contain zero or non-returned fiscal power. <br>
+  -Make sure after each column modification command that the changes have been taken into account after we can start our
+  analysis.</b>
+</h3>
+
+
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
@@ -13730,7 +13809,7 @@ end.</h3>
 
 </div>
 
-<h3>
+<h3> VII-1
 Eliminate the rows that contain prices that have not been entered
 </h3>
 <div class="cell border-box-sizing code_cell rendered">
@@ -13761,7 +13840,7 @@ Eliminate the rows that contain prices that have not been entered
 </div>
 
 <h3>
-  Convert price column to numbers.
+  VII-2Convert price column to numbers.
 </h3>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -13776,7 +13855,7 @@ Eliminate the rows that contain prices that have not been entered
 </div>
 
 </div>
-<h3>We first select the car with the highest price.</h3>
+<h3>VII-3We first select the car with the highest price.</h3>
 <br>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -16312,7 +16391,7 @@ close to the average price, so our first task is to select the average price</h2
 
     </div>
 </div>
-</div><h1> <b>Conclusion</b></h1>
+</div><h1> <b>IX-Conclusion</b></h1>
 <h3>we can deduce that the brand renault and hyndai considers itself mid-range cars with a very reasonable price and
   moreover with an automatic gearbox, even the mileage is low, a fiscal power 6-8 so even the taxes will be reduced,
   there
